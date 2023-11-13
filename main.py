@@ -58,6 +58,8 @@ def get_page_data(url):
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument('log-level=3') #убирает инфо сообщения селениум
         options.add_argument("--headless=new")
+        prefs = {"profile.managed_default_content_settings.images": 2}
+        options.add_experimental_option("prefs", prefs)
         
         
         driver = webdriver.Chrome(options=options)
@@ -70,22 +72,26 @@ def get_page_data(url):
     })
         
         driver.get(url)
-        time.sleep(random.randint(8, 12))
-        #driver.maximize_window()
-        #time.sleep(10)
-        #driver.get_screenshot_as_file("screenshot.png")
-        article = driver.find_element(By.CLASS_NAME, 't12nw7s2_pdp').text.split()[1]
-        title = driver.find_element(By.TAG_NAME, 'h1').text
-        price = driver.find_element(By.CSS_SELECTOR, "div[data-testid='prices_mf-pdp']").text.split('\n')
-        if len(price) == 1:
-            price = price[0].split('₽')[0].replace(' ', '')
-        else:
-            price = price[1].split('₽')[0].replace(' ', '')
-            
+        
+        try:
+            element = WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.CLASS_NAME, 't12nw7s2_pdp')))
+        finally:
 
-        print(article)
-        print(title)
-        print(price)
+        #time.sleep(random.randint(8, 12))
+        #driver.maximize_window()
+        #driver.get_screenshot_as_file("screenshot.png")
+            article = driver.find_element(By.CLASS_NAME, 't12nw7s2_pdp').text.split()[1]
+            title = driver.find_element(By.TAG_NAME, 'h1').text
+            price = driver.find_element(By.CSS_SELECTOR, "div[data-testid='prices_mf-pdp']").text.split('\n')
+            if len(price) == 1:
+                price = price[0].split('₽')[0].replace(' ', '')
+            else:
+                price = price[1].split('₽')[0].replace(' ', '')
+                
+
+            print(article)
+            print(title)
+            print(price)
             
     except Exception as ex:
         print(ex)
@@ -102,7 +108,7 @@ def main():
         'https://novorossiysk.leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-35-l-aquaverso-es-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669546/'
     ]
     
-    with multiprocessing.Pool(processes=2) as mp:
+    with multiprocessing.Pool(processes=3) as mp:
         mp.map(get_page_data, query_list)
     
     #schedule.every(2).minutes.do(get_page_data)
