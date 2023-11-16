@@ -14,5 +14,6 @@ for row in range(2, sheet.max_row + 1):
     tuple_row = (city, bau_link, leroy_link, conv_factor, retail_price) #кортеж значений листа
     sheet_data.append(tuple_row)
 
+print(sheet_data)
 
 
