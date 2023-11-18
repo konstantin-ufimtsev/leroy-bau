@@ -11,6 +11,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import multiprocessing
 import random
 from selenium.webdriver.common.action_chains import ActionChains
+import logg
+import input_xlsx
 
 #kld_door_send_bot
 #6753878735:AAH7bfqhXVIwI0wSLTp-mjMb6kjeuAqF3OY
@@ -34,7 +36,7 @@ def send_to_telegram(message:str):
     bot = telebot.TeleBot(token)
     chat_id = '438152630'
     bot.send_message(chat_id, message)
-    print('Сообщение отправлено в телеграм')
+    logg.logging.info('Сообщение отправлено в телеграм')
 
 def time_now():
     now = datetime.now() 
@@ -42,7 +44,7 @@ def time_now():
     return current_time
 
 def get_driver(url: str):
-
+    
     options = webdriver.ChromeOptions()
     options.add_argument("user-agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:84.0) Gecko/20100101 Firefox/84.0")
     options.add_argument("--disable-blink-features=AutomationControlled")
@@ -59,29 +61,33 @@ def get_driver(url: str):
     '''
 })
     
-    driver.get(url)
-    get_page_data(driver)
+    try:
+        driver.get(url)
+        logg.logging.info(f'Драйвер ЗАГРУЖЕН для страницы: {url}')
+    except Exception as ex:
+        logg.logging.info(f'Драйвер НЕ ЗАГРУЖЕН для страницы: {url} ,ошибка - {ex}')
+    
+    get_page_data(driver, url)
     
 
-def get_page_data(driver):
-    
+def get_page_data(driver, url:str):
     try:
         WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.CLASS_NAME, 't12nw7s2_pdp')))
-        print('Загрузилась цена')
-    except:
-        print('Цена не загрузилась')
+        logg.logging.info(f'Цена ЗАГРУЖЕНА со страницы: {url}')
+    except Exception as ex:
+        logg.logging.info(f'Цена НЕ ЗАГРУЖЕНА со страницы {url}, ошибка - {ex}')
 
     try:
         driver.execute_script("window.scrollBy(0,800)")
-        print('Скролл отработал')
-    except:
-        print('Скролл НЕ отработал')
+        logg.logging.info(f'Скролл ВЫПОЛНЕН для страницы: {url}')
+    except Exception as ex:
+        logg.logging.info(f'Скролл НЕ ВЫПОЛНЕН для страницы: {url}, ошибка - {ex}')
 
     try:
         driver.find_element(By.CSS_SELECTOR, "div[class='sy2hk37_pdp']").click()
-        print('Кнопка остатков нажата')
-    except:
-        print('Кнопка остатков не нажата')
+        logg.logging.info(f'Кнопка остатков НАЖАТА для страницы: {url}')
+    except Exception as ex:
+        logg.logging.info(f'Кнопка остатков НЕ НАЖАТА для страницы: {url}, ошибка - {ex}')
     
     #driver.get_screenshot_as_file("screenshot.png")
     try:
@@ -92,54 +98,69 @@ def get_page_data(driver):
             price = price[0].split('₽')[0].replace(' ', '')
         else:
             price = price[1].split('₽')[0].replace(' ', '')
-        print('Данные со страницы получили')
-    except:
-        print('Данные со страницы не получили')
+        logg.logging.info(f'Данные ПОЛУЧЕНЫ со страницы: {url}')
+    except Exception as ex:
+        logg.logging.info(f'Данные НЕ ПОЛУЧЕНЫ со страницы {url},ошибка {ex}')
     
     try:
-        stock_result = [] #список кортежей остатков по магазинам
         stocks = driver.find_element(By.CSS_SELECTOR, "div[class='sy2hk37_pdp']").find_elements(By.CSS_SELECTOR, "li[data-qa='stock-in-store-item']")
+        
+        qty_omsk = []
+        qty_krasnodar = []
+        
+        kaliningrad = ['Леруа Мерлен Калининград']
+        omsk = ['Леруа Мерлен Омск Мега', 'Леруа Мерлен Омск Амурская']
+        krasnodar = ['Леруа Мерлен Краснодар СБС', 'Леруа Мерлен Краснодар Западный обход', 'Леруа Мерлен Краснодар Адыгея']
+        novorossiysk = ['Леруа Мерлен Новороссийск']
+        pushkino = ['Леруа Мерлен Пушкино']
+
         for stock in stocks:
             stock_list:list = stock.text.split('\n')
-            shop: str = stock_list[0]
             if stock_list[1] == 'Нет в наличии':
-                qty: float = 0
-                unit = ''
-            else:
-                qty: float = float(stock_list[1].rsplit(' ',1)[0].replace(' ', ''))
+                stock_list[1] = 0
+            if stock_list[0] in kaliningrad:
+                city:str = 'Калинниград'
+                qty:float = float(stock_list[1].rsplit(' ',1)[0].replace(' ', ''))
                 unit:str = stock_list[1].rsplit(' ',1)[1].replace('.', '')
-            res = (article, title, price, shop, qty, unit)
-            stock_result.append(res)
-        print(stock_result)
-    except:
-        print('Cчитать оcтаток не удалось')       
-  
+                #print(city, qty, unit)
+            elif stock_list[0] in novorossiysk:
+                city:str = 'Новороссийск'
+                qty = float(stock_list[1].rsplit(' ',1)[0].replace(' ', ''))
+                unit:str = stock_list[1].rsplit(' ',1)[1].replace('.', '')
+                #print(city, qty, unit)
+            elif stock_list[0] in pushkino:
+                city:str = 'Пушкино'
+                qty = float(stock_list[1].rsplit(' ',1)[0].replace(' ', ''))
+                unit:str = stock_list[1].rsplit(' ',1)[1].replace('.', '')
+                #print(city, qty, unit)
+            elif stock_list[0] in omsk:
+                city:str = 'Омск'
+                qty_omsk.append(float(stock_list[1].rsplit(' ',1)[0].replace(' ', '')))
+                unit:str = stock_list[1].rsplit(' ',1)[1].replace('.', '')
+                qty = sum(qty_omsk)
+                #print(city, qty, unit)
+            elif stock_list[0] in krasnodar:
+                city:str = 'Краснодар'
+                qty_krasnodar.append(float(stock_list[1].rsplit(' ',1)[0].replace(' ', '')))
+                unit:str = stock_list[1].rsplit(' ',1)[1].replace('.', '')
+                qty = sum(qty_krasnodar)
+                #print(city, qty, unit)
+        res = (city, article, title, price, qty, unit)
+        
+        logg.logging.info(f'Считали остатки товара:{url}')
+        print(res)
     
-    #получения остатка по региону
-    #калининиград - остаток по дному магазину
-    #новороссийск - остаток по дооному магазину
-    #краснодар - суммарный остаток по трем магазинам - Леруа Мерлен Краснодар СБС, Леруа Мерлен Краснодар Западный обход, Леруа Мерлен Краснодар Адыгея
-    #омск - суммарный остаток по двум магазинам  - Леруа Мерлен Омск Мега, Леруа Мерлен Омск Амурская
-    #пушкино - остаток только по пушкино
-
-
-    
+    except Exception as ex:
+        logg.logging.info(f'НЕ СЧИТАЛИ остатки товара: {url} - ошибка - {ex}')        
+            
+   
    
 def main():
-    
-    query_list = [
-        'https://leroymerlin.ru/product/radiator-rifar-monolit-500-100-bimetall-8-sekciy-bokovoe-podklyuchenie-cvet-belyy-12876448/',
-        'https://kaliningrad.leroymerlin.ru/product/sifon-dlya-moyki-equation-d-90-mm-s-vypuskom-perelivom-i-otvodom-dlya-stiralnoy-mashiny-18550959/',
-        'https://kaliningrad.leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-100-l-zanussi-splendore-zwh-s-2-kvt-vertikalnyy-gorizontalnyy-nerzhaveyushchaya-stal-mokryy-ten-82108182/',
-        'https://kaliningrad.leroymerlin.ru/product/sol-tabletirovannaya-barer-universalnaya-25-kg-17895568/',
-        'https://novorossiysk.leroymerlin.ru/product/sifon-dlya-vanny-equation-s-vypuskom-s-reviziey-18551011/',
-        'https://novorossiysk.leroymerlin.ru/product/kran-sharovoy-20-mm-standartnyy-prohod-polipropilen-82222148/',
-        'https://novorossiysk.leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-35-l-aquaverso-es-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669546/',
-        'https://krasnodar.leroymerlin.ru/product/sol-tabletirovannaya-mozyrsol-25-kg-88013226/'
-    ]
-    
+
+    query = input_xlsx.read_file()
+
     with multiprocessing.Pool(processes=3) as mp:
-        mp.map(get_driver, query_list)
+        mp.map(get_driver, query)
     
     #schedule.every(2).minutes.do(get_page_data)
     #while True:

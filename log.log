@@ -1,0 +1,249 @@
+[18.11.2023-18:25:21] INFO     [main.py:162] СЧИТАЛ данные из файла
+[18.11.2023-18:27:01] INFO     [main.py:163] СЧИТАЛ данные из файла
+[18.11.2023-18:28:55] INFO     [main.py:39] Сообщение отправлено в телеграм
+[18.11.2023-18:45:40] INFO     [main.py:39] Сообщение отправлено в телеграм
+[18.11.2023-18:48:44] INFO     [main.py:39] Сообщение отправлено в телеграм
+[18.11.2023-18:49:05] INFO     [main.py:39] Сообщение отправлено в телеграм
+[18.11.2023-18:52:54] INFO     [main.py:39] Сообщение отправлено в телеграм
+[18.11.2023-18:55:34] INFO     [main.py:66] Драйвер ЗАГРУЖЕН для страницы: https://leroymerlin.ru/product/radiator-monlan-bimetal-500-80-bimetall-10-sekciy-bokovoe-podklyuchenie-cvet-belyy-82735983
+[18.11.2023-18:55:52] INFO     [main.py:66] Драйвер ЗАГРУЖЕН для страницы: https://leroymerlin.ru/product/magistralnyy-korpus-10sl-dlya-holodnoy-vody-18653106
+[18.11.2023-18:56:08] INFO     [main.py:78] Цена НЕ ЗАГРУЖЕНА со страницы https://leroymerlin.ru/product/magistralnyy-korpus-10sl-dlya-holodnoy-vody-18653106, ошибка - Message: 
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:56:08] INFO     [main.py:82] Скролл ВЫПОЛНЕН для страницы: https://leroymerlin.ru/product/magistralnyy-korpus-10sl-dlya-holodnoy-vody-18653106
+[18.11.2023-18:56:08] INFO     [main.py:90] Кнопка остатков НЕ НАЖАТА для страницы: https://leroymerlin.ru/product/magistralnyy-korpus-10sl-dlya-holodnoy-vody-18653106, ошибка - Message: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='sy2hk37_pdp']"}
+  (Session info: chrome=114.0.5735.134); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:56:08] INFO     [main.py:103] Данные НЕ ПОЛУЧЕНЫ со страницы https://leroymerlin.ru/product/magistralnyy-korpus-10sl-dlya-holodnoy-vody-18653106,ошибка Message: no such element: Unable to locate element: {"method":"css selector","selector":".t12nw7s2_pdp"}
+  (Session info: chrome=114.0.5735.134); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:56:08] INFO     [main.py:154] НЕ СЧИТАЛИ остатки товара: https://leroymerlin.ru/product/magistralnyy-korpus-10sl-dlya-holodnoy-vody-18653106 - ошибка - Message: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='sy2hk37_pdp']"}
+  (Session info: chrome=114.0.5735.134); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:56:35] INFO     [main.py:66] Драйвер ЗАГРУЖЕН для страницы: https://leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-55-l-aquaverso-er-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669554
+[18.11.2023-18:56:42] INFO     [main.py:76] Цена ЗАГРУЖЕНА со страницы: https://leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-55-l-aquaverso-er-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669554
+[18.11.2023-18:56:43] INFO     [main.py:82] Скролл ВЫПОЛНЕН для страницы: https://leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-55-l-aquaverso-er-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669554
+[18.11.2023-18:56:45] INFO     [main.py:88] Кнопка остатков НАЖАТА для страницы: https://leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-55-l-aquaverso-er-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669554
+[18.11.2023-18:56:46] INFO     [main.py:101] Данные ПОЛУЧЕНЫ со страницы: https://leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-55-l-aquaverso-er-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669554
+[18.11.2023-18:56:49] INFO     [main.py:154] НЕ СЧИТАЛИ остатки товара: https://leroymerlin.ru/product/vodonagrevatel-nakopitelnyy-55-l-aquaverso-er-15-kvt-vertikalnyy-emalirovannaya-stal-mokryy-ten-18669554 - ошибка - 'int' object has no attribute 'rsplit'
+[18.11.2023-18:56:58] INFO     [main.py:78] Цена НЕ ЗАГРУЖЕНА со страницы https://leroymerlin.ru/product/radiator-monlan-bimetal-500-80-bimetall-10-sekciy-bokovoe-podklyuchenie-cvet-belyy-82735983, ошибка - Message: 
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:56:58] INFO     [main.py:82] Скролл ВЫПОЛНЕН для страницы: https://leroymerlin.ru/product/radiator-monlan-bimetal-500-80-bimetall-10-sekciy-bokovoe-podklyuchenie-cvet-belyy-82735983
+[18.11.2023-18:56:58] INFO     [main.py:90] Кнопка остатков НЕ НАЖАТА для страницы: https://leroymerlin.ru/product/radiator-monlan-bimetal-500-80-bimetall-10-sekciy-bokovoe-podklyuchenie-cvet-belyy-82735983, ошибка - Message: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='sy2hk37_pdp']"}
+  (Session info: chrome=114.0.5735.134); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:56:58] INFO     [main.py:103] Данные НЕ ПОЛУЧЕНЫ со страницы https://leroymerlin.ru/product/radiator-monlan-bimetal-500-80-bimetall-10-sekciy-bokovoe-podklyuchenie-cvet-belyy-82735983,ошибка Message: no such element: Unable to locate element: {"method":"css selector","selector":".t12nw7s2_pdp"}
+  (Session info: chrome=114.0.5735.134); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:56:58] INFO     [main.py:154] НЕ СЧИТАЛИ остатки товара: https://leroymerlin.ru/product/radiator-monlan-bimetal-500-80-bimetall-10-sekciy-bokovoe-podklyuchenie-cvet-belyy-82735983 - ошибка - Message: no such element: Unable to locate element: {"method":"css selector","selector":"div[class='sy2hk37_pdp']"}
+  (Session info: chrome=114.0.5735.134); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Backtrace:
+	GetHandleVerifier [0x0095A813+48355]
+	(No symbol) [0x008EC4B1]
+	(No symbol) [0x007F5358]
+	(No symbol) [0x008209A5]
+	(No symbol) [0x00820B3B]
+	(No symbol) [0x0084E232]
+	(No symbol) [0x0083A784]
+	(No symbol) [0x0084C922]
+	(No symbol) [0x0083A536]
+	(No symbol) [0x008182DC]
+	(No symbol) [0x008193DD]
+	GetHandleVerifier [0x00BBAABD+2539405]
+	GetHandleVerifier [0x00BFA78F+2800735]
+	GetHandleVerifier [0x00BF456C+2775612]
+	GetHandleVerifier [0x009E51E0+616112]
+	(No symbol) [0x008F5F8C]
+	(No symbol) [0x008F2328]
+	(No symbol) [0x008F240B]
+	(No symbol) [0x008E4FF7]
+	BaseThreadInitThunk [0x77227BA9+25]
+	RtlInitializeExceptionChain [0x7743BD2B+107]
+	RtlClearBits [0x7743BCAF+191]
+
+[18.11.2023-18:57:01] INFO     [main.py:66] Драйвер ЗАГРУЖЕН для страницы: https://leroymerlin.ru/product/korpus-filtra-equation-sl10-dlya-holodnoy-vody-rezba-1-2-89078534
+[18.11.2023-18:57:13] INFO     [main.py:66] Драйвер ЗАГРУЖЕН для страницы: https://leroymerlin.ru/product/vypusk-equation-dlya-rakoviny-bez-pereliva-klik-klak-hromirovannyy-82261527
+[18.11.2023-18:57:20] INFO     [main.py:76] Цена ЗАГРУЖЕНА со страницы: https://leroymerlin.ru/product/korpus-filtra-equation-sl10-dlya-holodnoy-vody-rezba-1-2-89078534
+[18.11.2023-18:57:20] INFO     [main.py:82] Скролл ВЫПОЛНЕН для страницы: https://leroymerlin.ru/product/korpus-filtra-equation-sl10-dlya-holodnoy-vody-rezba-1-2-89078534
+[18.11.2023-18:57:21] INFO     [main.py:88] Кнопка остатков НАЖАТА для страницы: https://leroymerlin.ru/product/korpus-filtra-equation-sl10-dlya-holodnoy-vody-rezba-1-2-89078534
+[18.11.2023-18:57:22] INFO     [main.py:101] Данные ПОЛУЧЕНЫ со страницы: https://leroymerlin.ru/product/korpus-filtra-equation-sl10-dlya-holodnoy-vody-rezba-1-2-89078534
+[18.11.2023-18:57:22] INFO     [main.py:76] Цена ЗАГРУЖЕНА со страницы: https://leroymerlin.ru/product/vypusk-equation-dlya-rakoviny-bez-pereliva-klik-klak-hromirovannyy-82261527
+[18.11.2023-18:57:22] INFO     [main.py:82] Скролл ВЫПОЛНЕН для страницы: https://leroymerlin.ru/product/vypusk-equation-dlya-rakoviny-bez-pereliva-klik-klak-hromirovannyy-82261527
+[18.11.2023-18:57:23] INFO     [main.py:88] Кнопка остатков НАЖАТА для страницы: https://leroymerlin.ru/product/vypusk-equation-dlya-rakoviny-bez-pereliva-klik-klak-hromirovannyy-82261527
+[18.11.2023-18:57:23] INFO     [main.py:150] Считали остатки товара:https://leroymerlin.ru/product/korpus-filtra-equation-sl10-dlya-holodnoy-vody-rezba-1-2-89078534
+[18.11.2023-18:57:23] INFO     [main.py:101] Данные ПОЛУЧЕНЫ со страницы: https://leroymerlin.ru/product/vypusk-equation-dlya-rakoviny-bez-pereliva-klik-klak-hromirovannyy-82261527
+[18.11.2023-18:57:24] INFO     [main.py:150] Считали остатки товара:https://leroymerlin.ru/product/vypusk-equation-dlya-rakoviny-bez-pereliva-klik-klak-hromirovannyy-82261527
+[18.11.2023-18:57:34] INFO     [main.py:66] Драйвер ЗАГРУЖЕН для страницы: https://leroymerlin.ru/product/kotel-elektricheskiy-alterm-220-380-v-45-kvt-18745334
+[18.11.2023-18:57:36] INFO     [main.py:66] Драйвер ЗАГРУЖЕН для страницы: https://leroymerlin.ru/product/nasos-cirkulyacionnyy-oasis-25-2-180-mm-13795287
+[18.11.2023-18:57:48] INFO     [main.py:76] Цена ЗАГРУЖЕНА со страницы: https://leroymerlin.ru/product/kotel-elektricheskiy-alterm-220-380-v-45-kvt-18745334
+[18.11.2023-18:57:48] INFO     [main.py:82] Скролл ВЫПОЛНЕН для страницы: https://leroymerlin.ru/product/kotel-elektricheskiy-alterm-220-380-v-45-kvt-18745334
+[18.11.2023-18:57:50] INFO     [main.py:88] Кнопка остатков НАЖАТА для страницы: https://leroymerlin.ru/product/kotel-elektricheskiy-alterm-220-380-v-45-kvt-18745334
+[18.11.2023-18:57:51] INFO     [main.py:101] Данные ПОЛУЧЕНЫ со страницы: https://leroymerlin.ru/product/kotel-elektricheskiy-alterm-220-380-v-45-kvt-18745334
